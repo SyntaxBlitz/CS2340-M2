@@ -1,17 +1,10 @@
+defaultTasks 'jar'
+
 apply plugin: 'java'
 
-
-repositories {
-	flatDir {
-		dirs 'lib'
-	}
-}
-
-
 dependencies {
-	compile name: 'resources'
+	compile files('lib/resources.jar')
 }
-
 
 jar {
 	manifest {
@@ -19,7 +12,4 @@ jar {
 				'Class-Path': '../../lib/resources.jar')
 	}
 
-	into ('lib') {
-		from 'libs'
-	}
 }
