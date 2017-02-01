@@ -1,20 +1,20 @@
 apply plugin: 'java'
 
-buildscript {
-    repositories {
-        mavenCentral()
-    }
+repositories {
+	flatDir {
+		dirs 'lib'
+	}
 }
 
 dependencies {
-	compile name: 'sjinesh3'
+	compile name: 'resources'
 }
 
 jar {
   manifest {
     attributes(
       'Main-Class': 'edu.gatech.oad.antlab.pkg1.AntLabMain',
-	'Class-Path': './lib/sjinesh3Resources.jar'
+	'Class-Path': '../../lib/resources.jar'
     )
   }
  into ('lib') {
